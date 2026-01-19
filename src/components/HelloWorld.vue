@@ -2,11 +2,16 @@
 defineProps<{
   msg: string
 }>()
+// const emits = defineEmits<{
+  // (e: 'update:msg', value: string): void,
+  // title:[id: number]: void
+// }>()
 </script>
 
 <template>
   <div class="greetings">
-  Hello World
+   Hello World {{ msg }} 
+   <slot name="title"></slot>
   </div>
 </template>
 

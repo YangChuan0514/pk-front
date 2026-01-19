@@ -13,6 +13,7 @@ import Layouts from 'vite-plugin-vue-layouts';
 // import VueMacros from 'vue-macros'
 import { VitePWA } from 'vite-plugin-pwa'
 import { viteMockServe } from 'vite-plugin-mock'
+import { manifest } from './pwa/manifest'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -54,11 +55,13 @@ export default defineConfig({
       layoutsDirs: 'src/layout',
       defaultLayout: 'default',
     }),
-    VitePWA(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest,
+    }),
     viteMockServe({
       // default
       mockPath: 'mock',
-      enable: true,
     }),
   ],
 
