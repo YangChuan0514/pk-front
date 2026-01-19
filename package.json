@@ -22,7 +22,6 @@
   "dependencies": {
     "@unocss/reset": "^66.6.0",
     "pinia": "^3.0.4",
-    "reset-css": "^5.0.2",
     "vue": "^3.5.26",
     "vue-router": "^4.6.4"
   },
