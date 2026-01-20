@@ -2,7 +2,6 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -14,6 +13,7 @@ import Layouts from 'vite-plugin-vue-layouts';
 import { VitePWA } from 'vite-plugin-pwa'
 import { viteMockServe } from 'vite-plugin-mock'
 import { manifest } from './pwa/manifest'
+import AutoImportVueRouter from 'unplugin-vue-router/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -26,7 +26,6 @@ export default defineConfig({
     //   }
     // ),
     vue(),
-    pages(),
     UnoCSS({}),
     AutoImport({
       include: [
@@ -38,10 +37,11 @@ export default defineConfig({
       imports: [
         // presets
         'vue',
-        'vue-router',
+        AutoImportVueRouter,
         '@vueuse/core'
       ],
     }),
+    AutoImportVueRouter(),
     Components({
       dts: true,
       resolvers: [ElementPlusResolver(), IconsResolver({
