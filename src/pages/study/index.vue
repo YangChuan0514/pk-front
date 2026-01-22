@@ -1,5 +1,5 @@
 <template>
-  <div>Not Found</div>
+  <div>study</div>
 </template>
 
 <script setup lang="ts"></script>
@@ -8,5 +8,5 @@
 
 <route lang="yaml">
 meta:
-  layout: 404
+  layout: default
 </route>

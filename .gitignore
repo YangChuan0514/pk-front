@@ -43,3 +43,6 @@ components.d.ts
 typed-router.d.ts
 #auto-routes.d.ts
 auto-routes.d.ts
+
+# mock
+mock/*
