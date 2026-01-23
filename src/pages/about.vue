@@ -2,8 +2,8 @@
   <div class="bg-gray-100 flex-1">
     <div
       class="bg-cover bg-center w-full h-[560px]"
-      :style="{ backgroundImage: `url(${bg})` }"
     ></div>
+    <TestMd></TestMd>
     <Container class="mt--80px value">
       <div class="text-center p-4 bg-white w-full">
         <div
@@ -64,12 +64,9 @@
 </template>
 
 <script lang="ts" setup>
-import bg from '@/assets/images/about.png'
-import building from '@/assets/images/building.jpg'
-import work from '@/assets/images/work.png'
-import work1 from '@/assets/images/work1.png'
 
 import type { PartnerType } from '@/components/types'
+import TestMd from '@/components/md/text.md'
 
 const stories = [
   {
@@ -153,7 +150,6 @@ $dot: 8px;
     width: $dot + 6px;
     height: $dot + 6px;
     border-radius: 50%;
-    background: lighten($color: #b8babb, $amount: 30);
     position: absolute;
     top: calc((2.5rem - $dot - 6px) / 2);
     right: 0;

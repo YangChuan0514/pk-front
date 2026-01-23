@@ -16,6 +16,7 @@ import { manifest } from './pwa/manifest'
 import AutoImportVueRouter from 'unplugin-vue-router/vite'
 import { transformerDirectives, transformerVariantGroup } from 'unocss'
 import postcssPxToViewport from 'postcss-px-to-viewport-8-plugin'
+import Markdown from 'unplugin-vue-markdown/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -27,12 +28,17 @@ export default defineConfig({
     //     },
     //   }
     // ),
-    vue(),
+    vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
     UnoCSS({
       transformers: [
         transformerDirectives(),
         transformerVariantGroup(),
       ],
+    }),
+    Markdown({
+
     }),
     AutoImport({
       include: [
